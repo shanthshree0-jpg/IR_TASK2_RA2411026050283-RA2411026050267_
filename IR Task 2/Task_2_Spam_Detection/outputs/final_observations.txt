@@ -1,0 +1,75 @@
+==============================================================================
+ INFORMATION RETRIEVAL CLA2 — TASK 2: FINAL OBSERVATIONS & RECOMMENDATION
+==============================================================================
+
+1. DATASET & AUDIT SUMMARY
+ - Raw Parsed Messages : 5,574
+ - Exact Duplicates    : 414
+ - Retained Corpus Size: 5,160 messages
+ - Class Distribution  : 4,518 Ham (87.6%) | 642 Spam (12.4%)
+ - Split Details       : 80% Train (4,128) / 20% Test (1,032), Stratified
+
+2. PREPROCESSING & TF-IDF CONFIGURATION
+ - Representation      : TF-IDF with sublinear scaling (1 + log(TF))
+ - N-Gram Range        : (1, 2) (Unigrams + Bigrams)
+ - Vocabulary Size     : 5,000 features extracted
+ - Stop Words Policy   : Refined English stop words preserving polarity/domain markers
+
+3. EMPIRICAL MODEL COMPARISON (TEST SET RESULTS)
+ Model                    | Accuracy  | Precision | Recall    | F1-Score  | Inference 
+ --------------------------------------------------------------------------------------
+ Decision Tree            |    96.03% |    0.8321 |    0.8516 |    0.8417 |   0.0009s
+ K-Nearest Neighbors      |    97.38% |    1.0000 |    0.7891 |    0.8821 |   0.0691s
+ Support Vector Machine   |    97.97% |    0.9147 |    0.9219 |    0.9183 |   0.0003s
+ Multinomial Naive Bayes  |    97.00% |    1.0000 |    0.7578 |    0.8622 |   0.0002s
+
+4. BEST PERFORMING MODELS ACCORDING TO METRICS
+ - Best Spam F1-Score : Support Vector Machine (0.9183)
+ - Best Accuracy      : Support Vector Machine (97.97%)
+ - Best Spam Recall   : Support Vector Machine (0.9219)
+ - Best Spam Precision: K-Nearest Neighbors (1.0000)
+
+5. WHAT-IF EXPERIMENT FINDINGS (KNN NEIGHBOR SENSITIVITY)
+ Systematically varying K across 3, 5, 7, and 9 revealed:
+ - K=3: Accuracy=97.48%, Spam Precision=0.9811, Spam Recall=0.8125, Spam F1=0.8889
+ - K=5: Accuracy=97.38%, Spam Precision=1.0000, Spam Recall=0.7891, Spam F1=0.8821
+ - K=7: Accuracy=97.09%, Spam Precision=1.0000, Spam Recall=0.7656, Spam F1=0.8673
+ - K=9: Accuracy=96.61%, Spam Precision=1.0000, Spam Recall=0.7266, Spam F1=0.8416
+ Analysis: In highly imbalanced text datasets (~87% ham), increasing K expands the
+ neighborhood to include predominantly majority-class (ham) messages. While precision
+ often stays high, spam recall declines for higher K because minority spam points are
+ easily outvoted by surrounding legitimate vectors in sparse high-dimensional space.
+
+6. PRACTICAL TRADE-OFFS & ALGORITHMIC BEHAVIOR IN TEXT CLASSIFICATION
+ a. High Accuracy vs. Spam Recall Paradox:
+    Because 87% of the corpus is legitimate (ham), a naive dummy classifier predicting
+    'ham' for every single message would achieve ~87% accuracy while completely failing
+    at spam detection (0% recall, 0% F1). Thus, Spam F1-Score and Spam Recall are the
+    primary evaluation metrics for this task.
+
+ b. False Positives (Ham classified as Spam) vs False Negatives (Spam classified as Ham):
+    - False Positive Cost: An urgent legitimate SMS (e.g. bank OTP, flight alert, or family
+      emergency) is blocked or diverted. This damages user trust severely.
+    - False Negative Cost: An unsolicited advertisement, phishing link, or scam reaches the
+      inbox, exposing the recipient to fraud.
+    In production systems, a high-precision threshold is prioritized to guarantee minimal
+    false alarms while maintaining satisfactory recall.
+
+ c. High-Dimensional TF-IDF Representation:
+    - Support Vector Machine (LinearSVC): Excels in text classification because high-dimensional
+      sparse text representations are frequently linearly separable. L2 regularization
+      and margin maximization prevent overfitting.
+    - Multinomial Naive Bayes: Exceptionally fast, low-parameter, and robust with word count
+      frequencies. It typically achieves outstanding precision with near-zero false alarms.
+    - Decision Trees: Suffer from greedy, axis-aligned splits over thousands of sparse
+      dimensions, often leading to sub-optimal generalization compared to margin classifiers.
+    - KNN: Computationally expensive at inference time (O(N_train * D) per query), and
+      distances in sparse TF-IDF space suffer from dimensionality degradation.
+
+7. EVIDENCE-BASED FINAL RECOMMENDATION
+ Based on the measured experimental evidence on the held-out test partition,
+ Support Vector Machine is the recommended classifier for production SMS spam detection.
+ It achieved the optimal balance of Spam Recall (0.9219) and
+ Spam Precision (0.9147), yielding the highest F1-Score
+ (0.9183) and robust generalization under class imbalance.
+==============================================================================

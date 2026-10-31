@@ -1,0 +1,26 @@
+==============================================================================
+ CLASSIFICATION REPORT: MULTINOMIAL NAIVE BAYES
+==============================================================================
+
+Training Time   : 0.0061 seconds
+Prediction Time : 0.0002 seconds
+Overall Accuracy: 97.00%
+Spam Precision  : 1.0000
+Spam Recall     : 0.7578
+Spam F1-Score   : 0.8622
+
+CONFUSION MATRIX BREAKDOWN:
+ True Negatives  (Ham correctly identified as Ham)   : 904
+ False Positives (Ham incorrectly flagged as Spam)   : 0
+ False Negatives (Spam missed, marked as Ham)        : 31
+ True Positives  (Spam correctly identified as Spam) : 97
+
+DETAILED PER-CLASS METRICS:
+              precision    recall  f1-score   support
+
+         ham     0.9668    1.0000    0.9831       904
+        spam     1.0000    0.7578    0.8622       128
+
+    accuracy                         0.9700      1032
+   macro avg     0.9834    0.8789    0.9227      1032
+weighted avg     0.9710    0.9700    0.9681      1032

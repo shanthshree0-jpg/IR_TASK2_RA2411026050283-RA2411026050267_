@@ -1,0 +1,26 @@
+==============================================================================
+ CLASSIFICATION REPORT: K-NEAREST NEIGHBORS
+==============================================================================
+
+Training Time   : 0.0045 seconds
+Prediction Time : 0.0691 seconds
+Overall Accuracy: 97.38%
+Spam Precision  : 1.0000
+Spam Recall     : 0.7891
+Spam F1-Score   : 0.8821
+
+CONFUSION MATRIX BREAKDOWN:
+ True Negatives  (Ham correctly identified as Ham)   : 904
+ False Positives (Ham incorrectly flagged as Spam)   : 0
+ False Negatives (Spam missed, marked as Ham)        : 27
+ True Positives  (Spam correctly identified as Spam) : 101
+
+DETAILED PER-CLASS METRICS:
+              precision    recall  f1-score   support
+
+         ham     0.9710    1.0000    0.9853       904
+        spam     1.0000    0.7891    0.8821       128
+
+    accuracy                         0.9738      1032
+   macro avg     0.9855    0.8945    0.9337      1032
+weighted avg     0.9746    0.9738    0.9725      1032

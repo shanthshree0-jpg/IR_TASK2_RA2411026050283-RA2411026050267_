@@ -1,0 +1,11 @@
+Index,Label,Original_Message,Extracted_Tokens_Sample,Total_Extracted_Tokens
+3591,ham,"I got arrested for possession at, I shit you not,  &lt;TIME&gt;  pm",got | arrested | possession | shit | not | lt | time | gt | pm | got arrested,17
+4498,ham,I am going to sleep. I am tired of travel.,going | sleep | tired | travel | going sleep | sleep tired | tired travel,7
+3291,ham,"Cool, text me when you head out",cool | text | head | cool text | text head,5
+555,ham,"Ill call u 2mrw at ninish, with my address that icky American freek wont stop callin me 2 bad Jen k eh?",ill | call | 2mrw | ninish | address | icky | american | freek | wont | stop,27
+4288,ham,I had a good time too. Its nice to do something a bit different with my weekends for a change. See ya soon,good | time | nice | bit | different | weekends | change | ya | soon | good time,17
+4122,spam,"For your chance to WIN a FREE Bluetooth Headset then simply reply back with ""ADP""",chance | win | free | bluetooth | headset | simply | reply | adp | chance win | win free,15
+2466,spam,U are subscribed to the best Mobile Content Service in the UK for £3 per ten days until you send STOP to 83435. Helpline 08706091795.,subscribed | best | mobile | content | service | uk | days | send | stop | 83435,23
+3501,spam,"Thanks for your ringtone order, reference number X49. Your mobile will be charged 4.50. Should your tone not arrive please call customer services 09065989182. From: [colour=red]text[/colour]TXTstar",thanks | ringtone | order | reference | number | x49 | mobile | charged | 50 | tone,41
+2262,spam,"Fantasy Football is back on your TV. Go to Sky Gamestar on Sky Active and play £250k Dream Team. Scoring starts on Saturday, so register now!SKY OPT OUT to 88088",fantasy | football | tv | sky | gamestar | sky | active | play | 250k | dream,35
+4275,spam,Congratulations ur awarded 500 of CD vouchers or 125gift guaranteed & Free entry 2 100 wkly draw txt MUSIC to 87066,congratulations | ur | awarded | 500 | cd | vouchers | 125gift | guaranteed | free | entry,31

@@ -1,0 +1,44 @@
+==============================================================================
+ INFORMATION RETRIEVAL CLA2 — TASK 2: TF-IDF FEATURE SUMMARY
+==============================================================================
+
+Training Documents Count     : 4,128
+Testing Documents Count      : 1,032
+N-Gram Range                 : (1, 2) (Unigrams + Bigrams)
+Minimum Document Frequency   : 2
+Maximum Features Ceiling     : 5000
+Actual Vocabulary Size       : 5,000 features
+Sublinear TF Scaling         : True (1 + log(TF))
+Normalization                : L2 Euclidean Norm
+
+TF-IDF WEIGHTING CONCEPT & INFORMATION RETRIEVAL FOUNDATION:
+TF-IDF (Term Frequency-Inverse Document Frequency) measures how important a word
+or bigram is to a message within the corpus. It combines two factors:
+1. Term Frequency (TF): Accounts for how many times a word occurs in a specific SMS.
+2. Inverse Document Frequency (IDF): Decreases the weight of terms that appear in
+   almost every message (e.g. 'ok', 'good'), while heavily boosting words that appear
+   frequently only in specific contexts (e.g. 'claim', 'urgent', 'txt', 'prize').
+This transformation yields a sparse vector representation where discriminative spam
+indicators stand out distinctly from everyday interpersonal dialogue.
+
+SAMPLE OF TOP LEARNED TF-IDF FEATURES (CORPUS-WIDE AVERAGE WEIGHT):
+  1. not                  (mean TF-IDF weight: 0.01677)
+  2. ok                   (mean TF-IDF weight: 0.01497)
+  3. call                 (mean TF-IDF weight: 0.01457)
+  4. no                   (mean TF-IDF weight: 0.01351)
+  5. just                 (mean TF-IDF weight: 0.01317)
+  6. come                 (mean TF-IDF weight: 0.01126)
+  7. know                 (mean TF-IDF weight: 0.01114)
+  8. like                 (mean TF-IDF weight: 0.01100)
+  9. gt                   (mean TF-IDF weight: 0.01083)
+ 10. lt                   (mean TF-IDF weight: 0.01074)
+ 11. ll                   (mean TF-IDF weight: 0.01068)
+ 12. good                 (mean TF-IDF weight: 0.01046)
+ 13. ur                   (mean TF-IDF weight: 0.01040)
+ 14. got                  (mean TF-IDF weight: 0.00994)
+ 15. lt gt                (mean TF-IDF weight: 0.00984)
+ 16. time                 (mean TF-IDF weight: 0.00960)
+ 17. going                (mean TF-IDF weight: 0.00951)
+ 18. lor                  (mean TF-IDF weight: 0.00914)
+ 19. home                 (mean TF-IDF weight: 0.00904)
+ 20. want                 (mean TF-IDF weight: 0.00895)

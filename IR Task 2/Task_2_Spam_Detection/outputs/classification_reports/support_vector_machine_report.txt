@@ -1,0 +1,26 @@
+==============================================================================
+ CLASSIFICATION REPORT: SUPPORT VECTOR MACHINE
+==============================================================================
+
+Training Time   : 0.0131 seconds
+Prediction Time : 0.0003 seconds
+Overall Accuracy: 97.97%
+Spam Precision  : 0.9147
+Spam Recall     : 0.9219
+Spam F1-Score   : 0.9183
+
+CONFUSION MATRIX BREAKDOWN:
+ True Negatives  (Ham correctly identified as Ham)   : 893
+ False Positives (Ham incorrectly flagged as Spam)   : 11
+ False Negatives (Spam missed, marked as Ham)        : 10
+ True Positives  (Spam correctly identified as Spam) : 118
+
+DETAILED PER-CLASS METRICS:
+              precision    recall  f1-score   support
+
+         ham     0.9889    0.9878    0.9884       904
+        spam     0.9147    0.9219    0.9183       128
+
+    accuracy                         0.9797      1032
+   macro avg     0.9518    0.9549    0.9533      1032
+weighted avg     0.9797    0.9797    0.9797      1032

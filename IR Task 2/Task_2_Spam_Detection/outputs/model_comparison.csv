@@ -1,0 +1,5 @@
+Model,Accuracy,Spam_Precision,Spam_Recall,Spam_F1_Score,True_Negatives,False_Positives,False_Negatives,True_Positives,Train_Time_Sec,Predict_Time_Sec
+Decision Tree,0.9603,0.8321,0.8516,0.8417,882,22,19,109,0.1551,0.0009
+K-Nearest Neighbors,0.9738,1.0,0.7891,0.8821,904,0,27,101,0.0045,0.0691
+Support Vector Machine,0.9797,0.9147,0.9219,0.9183,893,11,10,118,0.0131,0.0003
+Multinomial Naive Bayes,0.97,1.0,0.7578,0.8622,904,0,31,97,0.0061,0.0002

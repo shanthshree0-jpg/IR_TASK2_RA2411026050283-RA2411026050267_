@@ -1,0 +1,26 @@
+==============================================================================
+ INFORMATION RETRIEVAL CLA2 — TASK 2: DATASET SUMMARY & AUDIT
+==============================================================================
+
+Dataset File Name          : SMSSpamCollection
+Full File Path             : D:\Users\shreeshanth\Desktop\IR Task 2\Task_2_Spam_Detection\data\SMSSpamCollection
+File Size                  : 477,907 bytes
+Encoding Detected          : utf-8
+Total Lines Processed      : 5,574
+Valid Records Parsed       : 5,574
+Skipped / Malformed Lines  : 0
+Missing Values in Columns  : 0
+Raw Ham Count              : 4,827
+Raw Spam Count             : 747
+Exact Duplicate Messages   : 414
+Conflicting Label Messages : 0
+Deduplication Applied      : True
+Retained Messages Count    : 5,160
+Retained Ham Count         : 4,518
+Retained Spam Count        : 642
+
+DUPLICATE-HANDLING STRATEGY & RATIONALE:
+Exact duplicate messages were removed to prevent data leakage between train and test sets. Duplicate SMS broadcasts in real-world spam data artificially inflate held-out evaluation metrics if present across splits.
+
+DATA INTEGRITY CHECK:
+ No malformed or unparseable rows detected. All lines adhered to standard format.

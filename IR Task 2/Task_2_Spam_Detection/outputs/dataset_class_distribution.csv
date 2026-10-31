@@ -1,0 +1,4 @@
+Class,Count,Percentage,Description
+ham (legitimate),4518,87.56,Legitimate personal and transactional SMS
+spam (unsolicited),642,12.44,"Unsolicited promotional, prize, or phishing SMS"
+Total,5160,100.0,Retained unique SMS messages evaluated

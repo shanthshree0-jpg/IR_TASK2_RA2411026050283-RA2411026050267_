@@ -1,0 +1,26 @@
+==============================================================================
+ CLASSIFICATION REPORT: DECISION TREE
+==============================================================================
+
+Training Time   : 0.1551 seconds
+Prediction Time : 0.0009 seconds
+Overall Accuracy: 96.03%
+Spam Precision  : 0.8321
+Spam Recall     : 0.8516
+Spam F1-Score   : 0.8417
+
+CONFUSION MATRIX BREAKDOWN:
+ True Negatives  (Ham correctly identified as Ham)   : 882
+ False Positives (Ham incorrectly flagged as Spam)   : 22
+ False Negatives (Spam missed, marked as Ham)        : 19
+ True Positives  (Spam correctly identified as Spam) : 109
+
+DETAILED PER-CLASS METRICS:
+              precision    recall  f1-score   support
+
+         ham     0.9789    0.9757    0.9773       904
+        spam     0.8321    0.8516    0.8417       128
+
+    accuracy                         0.9603      1032
+   macro avg     0.9055    0.9136    0.9095      1032
+weighted avg     0.9607    0.9603    0.9605      1032
